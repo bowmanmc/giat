@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "lint:sass": "sass-lint -c .sass-lint.yml -v",
-      "presass": "npm-run-all lint:sass",
-      "sass": "node-sass --source-map true --include-path app/sass --include-path node_modules app/sass/main.scss app/styles/bundle.css",
-      "postsass": "postcss -c postcss.config.json",
-      "server:dev": "babel-node tools/runBrowserSync.js",
-      "watch": "nodemon -w app/sass -e scss -x \"npm run sass\"",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "npm-run-all --parallel server:dev watch"
+    "less": "lessc --source-map --include-path=node_modules app/less/main.less app/styles/bundle.css",
+    "postless": "postcss -c postcss.config.json",
+    "server:dev": "babel-node tools/runBrowserSync.js",
+    "watch": "nodemon -w app/less -e less -x \"npm run less\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all --parallel server:dev watch"
   },
   "repository": {
     "type": "git",
@@ -27,13 +25,12 @@
     "autoprefixer": "^6.7.7",
     "browser-sync": "^2.18.8",
     "cssnano": "^3.10.0",
-    "node-sass": "^4.5.2",
+    "less": "^2.7.2",
     "nodemon": "^1.11.0",
     "normalize.css": "^6.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^2.6.0",
-    "rimraf": "^2.6.1",
-    "sass-lint": "^1.10.2"
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
