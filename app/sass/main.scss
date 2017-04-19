@@ -5,6 +5,12 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
+// Defaults
 @import 'defaults/colors';
 @import 'defaults/typography';
 @import 'defaults/tags';
+
+// Components
+@import 'components/header';
+
+// Pages
